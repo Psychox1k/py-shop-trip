@@ -33,7 +33,9 @@ class Customer:
                 self.car.fuel_consumption,
                 fuel_price
             )
-            total_cost = round(shop_cost + fuel_cost_one_way + fuel_cost_one_way, 2)
+            total_cost = round(
+                shop_cost + fuel_cost_one_way + fuel_cost_one_way, 2
+            )
             trips[shop] = total_cost
         return trips
 
