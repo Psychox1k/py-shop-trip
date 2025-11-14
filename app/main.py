@@ -10,8 +10,8 @@ config_path = os.path.join(base_path, "config.json")
 
 
 def shop_trip() -> None:
-    with open(config_path, "r") as scf:
-        config = json.load(scf)
+    with open(config_path, "r") as config:
+        config = json.load(config)
 
     fuel_price = config["FUEL_PRICE"]
     customers = config["customers"]
