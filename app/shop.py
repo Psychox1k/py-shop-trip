@@ -18,7 +18,7 @@ class Shop:
         fixed_time = datetime(2021, 1, 4, 12, 33, 41)
         formatted_time = fixed_time.strftime("%d/%m/%Y %H:%M:%S")
 
-        print(f"\n\nDate: {formatted_time}")
+        print(f"\nDate: {formatted_time}")
         print(f"Thanks, {customer_name}, for your purchase!")
         print("You have bought:")
 

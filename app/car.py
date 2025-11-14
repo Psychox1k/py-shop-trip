@@ -15,7 +15,7 @@ class Car:
             (own_location[0] - destination[0]) ** 2
             + (own_location[1] - destination[1]) ** 2
         )
-        return round(distance, 2)
+        return distance
 
     def calculate_fuel_cost(
             self,
@@ -24,4 +24,4 @@ class Car:
             fuel_price: float
     ) -> float:
         fuel_needed = (distance / 100) * fuel_consumption_per_100km
-        return round(fuel_needed * fuel_price, 2)
+        return fuel_needed * fuel_price
