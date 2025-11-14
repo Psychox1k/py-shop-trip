@@ -1,17 +1,17 @@
 import json
 import os
 
-from customer import Customer
-from car import Car
-from shop import Shop
+from .customer import Customer
+from .car import Car
+from .shop import Shop
 
 base_path = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(base_path, "config.json")
 
 
 def shop_trip() -> None:
-    with open(config_path, "r") as config:
-        config = json.load(config)
+    with open(config_path, "r") as config_file:
+        config = json.load(config_file)
 
     fuel_price = config["FUEL_PRICE"]
     customers = config["customers"]
@@ -64,6 +64,7 @@ def shop_trip() -> None:
             continue
 
         print(f"{customer_object.name} rides to {min_shop.name}")
+        customer_object.location = min_shop.location
         min_shop.print_receipt(
             customer_object.product_cart,
             customer_object.name

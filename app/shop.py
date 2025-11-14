@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime
 
 
 class Shop:
@@ -15,14 +15,12 @@ class Shop:
         return total_amount
 
     def print_receipt(self, customer_list: dict, customer_name: str) -> None:
-        fixed_time = datetime(2021, 1, 4, 12, 33, 41)
-        formatted_time = fixed_time.strftime("%d/%m/%Y %H:%M:%S")
+        formatted_time = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
         print(f"\nDate: {formatted_time}")
         print(f"Thanks, {customer_name}, for your purchase!")
         print("You have bought:")
 
-        total_amount = 0
         for product, times in customer_list.items():
             price_for_products = self.products[product] * times
             product_name = product + "s" if times > 1 else product
@@ -36,7 +34,8 @@ class Shop:
                     f"{times} {product_name} "
                     f"for {price_for_products} dollars"
                 )
-            total_amount += price_for_products
+
+        total_amount = self.receipt_for_products(customer_list)
         print(f"Total cost is {total_amount} dollars")
         print("See you again!")
         print()
