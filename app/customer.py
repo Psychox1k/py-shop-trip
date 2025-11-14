@@ -9,7 +9,7 @@ class Customer:
             location: list,
             money: float,
             car: Car
-    ):
+    ) -> None:
         self.name = name
         self.product_cart = product_cart
         self.location = location
@@ -37,15 +37,15 @@ class Customer:
             trips[shop] = total_cost
         return trips
 
-    def calculate_cheapest_trip(self, trips: dict):
+    def calculate_cheapest_trip(self, trips: dict) -> tuple:
         cheapest_shop = min(trips, key=trips.get)
         min_cost = trips[cheapest_shop]
         return cheapest_shop, min_cost
 
-    def update_money(self, amount: float):
+    def update_money(self, amount: float) -> None:
         self.money = round(self.money - amount, 2)
 
-    def go_home(self):
+    def go_home(self) -> None:
         print(f"{self.name} rides home")
         print(f"{self.name} now has {self.money} dollars")
         print()

@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class Shop:
-    def __init__(self, name: str, location: list, products: dict):
+    def __init__(self, name: str, location: list, products: dict) -> None:
         self.name = name
         self.location = location
         self.products = products
@@ -14,7 +14,7 @@ class Shop:
             total_amount += price_for_product
         return total_amount
 
-    def print_receipt(self, customer_list: dict, customer_name: str):
+    def print_receipt(self, customer_list: dict, customer_name: str) -> None:
         fixed_time = datetime(2021, 1, 4, 12, 33, 41)
         formatted_time = fixed_time.strftime("%d/%m/%Y %H:%M:%S")
 
