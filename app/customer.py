@@ -28,12 +28,12 @@ class Customer:
                 self.location,
                 shop.location
             )
-            fuel_cost = self.car.calculate_fuel_cost(
+            fuel_cost_one_way = self.car.calculate_fuel_cost(
                 distance,
                 self.car.fuel_consumption,
                 fuel_price
             )
-            total_cost = round(shop_cost + fuel_cost, 2)
+            total_cost = round(shop_cost + fuel_cost_one_way + fuel_cost_one_way, 2)
             trips[shop] = total_cost
         return trips
 
